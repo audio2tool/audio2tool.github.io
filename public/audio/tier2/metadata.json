@@ -1,0 +1,66 @@
+{
+  "tier_info": {
+    "tier_number": 2,
+    "name": "Parametric",
+    "description": ""
+  },
+  "samples": [
+    {
+      "audio_file": "speaker_01_3dspeaker_speaker_3D_SPK_00332.wav",
+      "transcript": "Low regen braking and heat my seat to max",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "setRegenerativeBraking",
+            "parameters": {
+              "level": "Low"
+            }
+          },
+          {
+            "tool": "setSeatComfort",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_02_3dspeaker_speaker_3D_SPK_10898.wav",
+      "transcript": "Limit AC charging to twenty eight amps and warm up the steering wheel",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "setChargingAmperage",
+            "parameters": {
+              "amps": "28"
+            }
+          },
+          {
+            "tool": "setSteeringWheelHeat",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_08_3dspeaker_speaker_3D_SPK_06428.wav",
+      "transcript": "Show power usage and change the light color to blue",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "getEnergyUsage",
+            "parameters": {
+              "deviceId": "main_meter"
+            }
+          },
+          {
+            "tool": "setColor",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    }
+  ]
+}

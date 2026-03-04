@@ -1,0 +1,48 @@
+{
+  "tier_info": {
+    "tier_number": 6,
+    "name": "Correction",
+    "description": ""
+  },
+  "samples": [
+    {
+      "audio_file": "speaker_02_3dspeaker_speaker_3D_SPK_09998.wav",
+      "transcript": "Power on that outlet, never mind, I just want its power usage",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "setPowerState",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_02_3dspeaker_speaker_3D_SPK_01831.wav",
+      "transcript": "Set the regen to Low for now, hold on, keep it at Standard after all",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "setRegenerativeBraking",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_03_3dspeaker_speaker_3D_SPK_08647.wav",
+      "transcript": "Whats the status of microwave underscore one, no wait, microwave underscore two",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "getApplianceStatus",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    }
+  ]
+}

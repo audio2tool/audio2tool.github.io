@@ -1,0 +1,48 @@
+{
+  "tier_info": {
+    "tier_number": 4,
+    "name": "Implicit",
+    "description": ""
+  },
+  "samples": [
+    {
+      "audio_file": "speaker_03_3dspeaker_speaker_3D_SPK_00332.wav",
+      "transcript": "Is my car protected right now",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "getSentryStatus",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_01_3dspeaker_speaker_3D_SPK_10898.wav",
+      "transcript": "I'm not getting any power from the charger",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "startCharging",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_05_3dspeaker_speaker_3D_SPK_01831.wav",
+      "transcript": "It feels like it's stuck between gears",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "getGearSelection",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "tier_info": {
+    "tier_number": 3,
+    "name": "Multi-Intent",
+    "description": ""
+  },
+  "samples": [
+    {
+      "audio_file": "speaker_03_3dspeaker_speaker_3D_SPK_09068.wav",
+      "transcript": "Launch arcade and turn on the HEPA air filter",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "launchInCarGaming",
+            "parameters": {
+              "game": "Arcade"
+            }
+          },
+          {
+            "tool": "setAirQualityMode",
+            "parameters": {
+              "hepa": "True"
+            }
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_03_3dspeaker_speaker_3D_SPK_03314.wav",
+      "transcript": "Find food then turn off the steering wheel heater",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "searchPOI",
+            "parameters": {
+              "category": "Food"
+            }
+          },
+          {
+            "tool": "setSteeringWheelHeat",
+            "parameters": {
+              "on": "false"
+            }
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "speaker_02_3dspeaker_speaker_3D_SPK_01062.wav",
+      "transcript": "Set the temperature to twenty four celsius and then check my internet speed.",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "runNetworkSpeedTest",
+            "parameters": {}
+          },
+          {
+            "tool": "setTargetTemperature",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    }
+  ]
+}

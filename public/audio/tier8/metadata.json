@@ -1,0 +1,33 @@
+{
+  "tier_info": {
+    "tier_number": 8,
+    "name": "Intent Blending",
+    "description": "Multiple speakers or blended intents; primary actor focus required."
+  },
+  "samples": [
+    {
+      "audio_file": "mixed_01.wav",
+      "transcript": "Stop the charging session and activate the highest air filtration mode. [Other speaker] Flash lights and ventilate my seat please",
+      "ground_truth": {
+        "tool_calls": [
+          { "tool": "setAirQualityMode", "parameters": {  } }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "mixed_02.wav",
+      "transcript": "Turn on the speed cap and set passenger temperature to seventy two degree [Other speaker] We're done camping, turn off camp mode and flash the lights.",
+      "ground_truth": {
+        "tool_calls": [
+          { "tool": "setSpeedLimitMode", 
+          "parameters": { "mode": "On" } },
+          { "tool": "setZoneTemperature",
+          "parameters": { "zone": "Passenger", "temperature": "72.0" } }
+          
+        ]
+      },
+      "reasoning": ""
+    }
+  ]
+}

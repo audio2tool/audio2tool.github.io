@@ -1,0 +1,63 @@
+{
+  "tier_info": {
+    "tier_number": 7,
+    "name": "Conversation",
+    "description": ""
+  },
+  "samples": [
+    {
+      "audio_file": "conv0_turn_00_user_3dspeaker_speaker_3D_SPK_00481.wav",
+      "audio_files": [
+        "conv0_turn_00_user_3dspeaker_speaker_3D_SPK_00481.wav",
+        "conv0_turn_01_agent_ecapa_speaker_35282.wav",
+        "conv0_turn_02_user_3dspeaker_speaker_3D_SPK_00481.wav"
+      ],
+      "transcript": "USER: You know, I've been having the strangest issues with my internet lately. It reminds me of back in 2015 when I lived in that apartment complex with the terrible wiring - you remember the one, with the green shutters and that peculiar smell in the hallway? Anyway, I think I need to check if my router is working properly. Can you run a bandwidth test?\n\nAGENT: I'd be happy to help check your internet connection. Just to confirm, would you like me to run a network speed test to check your internet performance?\n\nUSER: Oh goodness, not a bandwidth test! What was I thinking? That's what my cousin Marvin always calls it, but he's not exactly tech-savvy, bless his heart. He once tried to download more RAM to his computer - can you believe it? Anyway, yes, what I actually need is a network speed test. My video calls keep freezing, and I've got this important Zoom meeting with my book club tomorrow where we're discussing that fascinating historical fiction novel about the Spanish Armada, and I simply can't miss it because I volunteered to lead the discussion.",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "runNetworkSpeedTest",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "conv1_turn_00_user_3dspeaker_speaker_3D_SPK_01831.wav",
+      "audio_files": [
+        "conv1_turn_00_user_3dspeaker_speaker_3D_SPK_01831.wav",
+        "conv1_turn_01_agent_ecapa_speaker_49394.wav",
+        "conv1_turn_02_user_3dspeaker_speaker_3D_SPK_01831.wav"
+      ],
+      "transcript": "USER: Can't you see I'm bored? I want to play a game.\nAGENT: I'd be happy to launch a game for you. Which one would you like to play? We have Solitaire, Chess, Racing, or Arcade.\nUSER: Ugh, just launch Solitaire already.",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "launchInCarGaming",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    },
+    {
+      "audio_file": "conv2_turn_00_user_3dspeaker_speaker_3D_SPK_07983.wav",
+      "audio_files": [
+        "conv2_turn_00_user_3dspeaker_speaker_3D_SPK_07983.wav",
+        "conv2_turn_01_agent_yodas_speaker_O4dHRrkWP2M.wav",
+        "conv2_turn_02_user_3dspeaker_speaker_3D_SPK_07983.wav"
+      ],
+      "transcript": "USER: This air purifier is driving me nuts, totally nuts. The stupid filter light just keeps blinking and blinking and blinking. Make it stop, just make it stop.\nAGENT: I understand that's frustrating. When you say the filter light keeps blinking and you want it to stop, there are a couple of things I can help with:\n1) Just explain what the blinking means and how long you can keep using the filter.\n2) Walk you through actually resetting the filter status after you've replaced the filter.\nWhich one do you want me to do?\nUSER: I already changed the filter, I already changed it, twice! I don't care what the light \"means”, I want it gone, really gone. Just reset whatever needs resetting on this purifier, on this one right here.",
+      "ground_truth": {
+        "tool_calls": [
+          {
+            "tool": "resetFilterStatus",
+            "parameters": {}
+          }
+        ]
+      },
+      "reasoning": ""
+    }
+  ]
+}
