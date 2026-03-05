@@ -12,7 +12,7 @@
         "tool_calls": [
           {
             "tool": "setThermostatMode",
-            "parameters": {}
+            "parameters": { "mode": "Fan_Only"}
           }
         ]
       },
@@ -25,7 +25,7 @@
         "tool_calls": [
           {
             "tool": "setZoneTemperature",
-            "parameters": {}
+            "parameters": { "zone": "Driver", "temperature": "16.0"}
           }
         ]
       },
@@ -38,7 +38,7 @@
         "tool_calls": [
           {
             "tool": "rampBrightness",
-            "parameters": {}
+            "parameters": {"deviceId": "light_1", "targetLevel": "40", "duration": "2m"}
           }
         ]
       },

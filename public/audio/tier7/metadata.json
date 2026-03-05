@@ -35,7 +35,7 @@
         "tool_calls": [
           {
             "tool": "launchInCarGaming",
-            "parameters": {}
+            "parameters": {"game": "Solitaire"}
           }
         ]
       },
@@ -53,7 +53,7 @@
         "tool_calls": [
           {
             "tool": "resetFilterStatus",
-            "parameters": {}
+            "parameters": {"deviceId": "purifier_1"}
           }
         ]
       },

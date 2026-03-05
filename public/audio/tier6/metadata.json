@@ -12,7 +12,7 @@
         "tool_calls": [
           {
             "tool": "setPowerState",
-            "parameters": {}
+            "parameters": {"deviceId": "plug_1", "state": "On"}
           }
         ]
       },
@@ -25,7 +25,7 @@
         "tool_calls": [
           {
             "tool": "setRegenerativeBraking",
-            "parameters": {}
+            "parameters": {"level": "Standard"}
           }
         ]
       },
@@ -38,7 +38,7 @@
         "tool_calls": [
           {
             "tool": "getApplianceStatus",
-            "parameters": {}
+            "parameters": {"deviceId": "microwave_2"}
           }
         ]
       },
