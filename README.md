@@ -1,6 +1,15 @@
-# Audio2Tool: Benchmark Demo
+# Audio2Tool: Speak, Call, Act
 
-A single-page research demo for the **Audio2Tool** benchmark, showcasing the eight complexity tiers with audio samples, transcripts, and ground-truth tool calls.
+Project page for the **Audio2Tool** benchmark, showcasing the eight complexity tiers with audio samples, transcripts, and ground-truth tool calls.
+
+## Links
+
+- **Paper:** [arXiv:2604.22821](https://arxiv.org/abs/2604.22821)
+- **Dataset:** [RVtech/Audio2Tool on Hugging Face](https://huggingface.co/datasets/RVtech/Audio2Tool)
+- **Code:** coming soon
+- **Leaderboard:** coming soon
+
+The Code and Leaderboard buttons render as disabled "Soon" placeholders until their URLs are filled in. To enable them, set `code` and `leaderboard` in the `LINKS` object near the top of `src/App.tsx`.
 
 ## Running locally
 
@@ -11,9 +20,9 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173).
 
-## Hosting on GitHub Pages (anonymous repo)
+## Hosting on GitHub Pages
 
-1. **Create a new repository** (e.g. `audio2tool-demo`) on GitHub. You can create it under an anonymous or secondary account for review.
+1. **Create a new repository** (e.g. `audio2tool-demo`) on GitHub.
 
 2. **Copy this folder** into the new repo (or clone the new repo and copy these files into it).
 
