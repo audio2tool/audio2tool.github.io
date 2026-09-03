@@ -18,7 +18,7 @@ interface Author {
 const AUTHORS: Author[] = [
   { name: 'Ramit Pahwa', equal: true },
   { name: 'Apoorva Beedu', equal: true },
-  { name: 'Parivesh Priye', equal: true },
+  { name: 'Parivesh Priye' },
   { name: 'Rutu Gandhi' },
   { name: 'Saloni Takawale' },
   { name: 'Aruna Baijal' },
