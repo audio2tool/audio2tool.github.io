@@ -6,10 +6,10 @@ Project page for the **Audio2Tool** benchmark, showcasing the eight complexity t
 
 - **Paper:** [arXiv:2604.22821](https://arxiv.org/abs/2604.22821)
 - **Dataset:** [RVtech/Audio2Tool on Hugging Face](https://huggingface.co/datasets/RVtech/Audio2Tool)
-- **Code:** coming soon
+- **Code:** [audio2tool/Audio2Tool on GitHub](https://github.com/audio2tool/Audio2Tool)
 - **Leaderboard:** coming soon
 
-The Code and Leaderboard buttons render as disabled "Soon" placeholders until their URLs are filled in. To enable them, set `code` and `leaderboard` in the `LINKS` object near the top of `src/App.tsx`.
+The Leaderboard button renders as a disabled "Soon" placeholder until its URL is filled in. To enable it, set `leaderboard` in the `LINKS` object near the top of `src/App.tsx`.
 
 ## Running locally
 

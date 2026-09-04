@@ -35,7 +35,7 @@ const CONFERENCE = 'Interspeech 2026'
 const LINKS: Record<'paper' | 'dataset' | 'code' | 'leaderboard', string | null> = {
   paper: 'https://arxiv.org/abs/2604.22821',
   dataset: 'https://huggingface.co/datasets/RVtech/Audio2Tool',
-  code: null,
+  code: 'https://github.com/audio2tool/Audio2Tool',
   leaderboard: null,
 }
 
