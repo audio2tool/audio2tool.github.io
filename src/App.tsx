@@ -36,7 +36,7 @@ const LINKS: Record<'paper' | 'dataset' | 'code' | 'leaderboard', string | null>
   paper: 'https://arxiv.org/abs/2604.22821',
   dataset: 'https://huggingface.co/datasets/RVtech/Audio2Tool',
   code: 'https://github.com/audio2tool/Audio2Tool',
-  leaderboard: null,
+  leaderboard: 'https://huggingface.co/spaces/RVtech/Audio2ToolLeaderboard',
 }
 
 interface ResourceLinkProps {
