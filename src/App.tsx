@@ -26,6 +26,19 @@ const AUTHORS: Author[] = [
 ]
 const AFFILIATION = 'Rivian and Volkswagen Group Technologies'
 const CONFERENCE = 'Interspeech 2026'
+const PROCEEDINGS = 'https://www.isca-archive.org/interspeech_2026/pahwa26_interspeech.html'
+const PDF = 'https://www.isca-archive.org/interspeech_2026/pahwa26_interspeech.pdf'
+const DOI = '10.21437/Interspeech.2026-2857'
+const BIBTEX = `@inproceedings{pahwa26_interspeech,
+  title     = {{Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use}},
+  author    = {Ramit Pahwa and Apoorva Beedu and Parivesh Priye and Rutu Gandhi and Saloni Takawale and Aruna Baijal and Zengli Yang},
+  year      = {2026},
+  booktitle = {{Interspeech 2026}},
+  pages     = {3453--3457},
+  doi       = {10.21437/Interspeech.2026-2857},
+  issn      = {2958-1796},
+  url       = {https://www.isca-archive.org/interspeech_2026/pahwa26_interspeech.html}
+}`
 
 /**
  * External resources shown in the hero, nav, and footer.
@@ -33,7 +46,7 @@ const CONFERENCE = 'Interspeech 2026'
  * they render as disabled "Soon" buttons so the layout is already in place.
  */
 const LINKS: Record<'paper' | 'dataset' | 'code' | 'leaderboard', string | null> = {
-  paper: 'https://arxiv.org/abs/2604.22821',
+  paper: PROCEEDINGS,
   dataset: 'https://huggingface.co/datasets/RVtech/Audio2Tool',
   code: 'https://github.com/audio2tool/Audio2Tool',
   leaderboard: 'https://huggingface.co/spaces/RVtech/Audio2ToolLeaderboard',
@@ -126,6 +139,9 @@ export default function App() {
             <a href="#overview" className="text-sm font-medium text-zinc-600 hover:text-zinc-900">
               Overview
             </a>
+            <a href="#citation" className="text-sm font-medium text-zinc-600 hover:text-zinc-900">
+              Citation
+            </a>
             <button
               type="button"
               onClick={scrollToDataset}
@@ -146,10 +162,10 @@ export default function App() {
         <section className="max-w-4xl mx-auto px-6 pt-12 pb-8 text-center">
           <h1 className="text-4xl font-bold text-zinc-900 tracking-tight">
             Audio2Tool
+            <span className="mt-2 block text-lg font-normal text-zinc-600 tracking-normal">
+              Speak, Call, Act — A Dataset for Benchmarking Speech Tool Use
+            </span>
           </h1>
-          <p className="mt-2 text-lg text-zinc-600">
-            Speak, Call, Act — A Dataset for Benchmarking Speech Tool Use
-          </p>
           <p className="mt-4 text-sm text-zinc-700 max-w-2xl mx-auto">
             {AUTHORS.map((author, i) => (
               <span key={author.name}>
@@ -168,10 +184,21 @@ export default function App() {
             </p>
           )}
           <p className="mt-2 text-sm font-medium text-zinc-700">
-            {CONFERENCE}
+            {CONFERENCE} · pp. 3453–3457
+          </p>
+          <p className="mt-1 text-sm text-zinc-600">
+            DOI:{' '}
+            <a href={`https://doi.org/${DOI}`} className="text-blue-600 underline underline-offset-2">
+              {DOI}
+            </a>
+          </p>
+          <p className="mt-5 text-zinc-700 max-w-2xl mx-auto">
+            A benchmark for speech function calling and audio-native tool use across smart car,
+            smart home, and wearable APIs.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <ResourceLink href={LINKS.paper} icon={FileText} label="Paper" />
+            <ResourceLink href={PDF} icon={FileText} label="PDF" />
             <ResourceLink href={LINKS.dataset} icon={Database} label="Dataset" />
             <ResourceLink href={LINKS.code} icon={Github} label="Code" />
             <ResourceLink href={LINKS.leaderboard} icon={Trophy} label="Leaderboard" />
@@ -192,6 +219,28 @@ export default function App() {
             <p className="text-zinc-700 leading-relaxed max-w-3xl">
               {ABSTRACT}
             </p>
+            <div className="mt-8 max-w-3xl space-y-4 text-zinc-700 leading-relaxed">
+              <h2 className="text-2xl font-bold text-zinc-900">Benchmark scope</h2>
+              <p>
+                Audio2Tool evaluates spoken tool selection and argument grounding. It supports
+                comparisons of Speech Language Models (SpeechLMs) and speech recognition plus
+                language model (ASR–LLM) pipelines on structured tool-call prediction.
+              </p>
+              <p>
+                The eight tiers test direct commands, parameter extraction, multiple intents,
+                implicit requests, distracting context, self-corrections, multi-turn dialogue,
+                and overlapping foreground and background speech. Speech is synthesized using
+                reference voices; noise and intent blending probe acoustic robustness.
+                Predicted tool calls do not establish successful execution in a live environment.
+              </p>
+              <p className="text-sm text-zinc-600">
+                Earlier preprint title: “Audio2Tool: Bridging Spoken Language Understanding and
+                Function Calling.” The preprint is available as{' '}
+                <a href="https://arxiv.org/abs/2604.22821" className="text-blue-600 underline underline-offset-2">
+                  arXiv:2604.22821
+                </a>.
+              </p>
+            </div>
           </div>
 
           <div className="max-w-4xl mx-auto px-6 pb-16">
@@ -213,7 +262,7 @@ export default function App() {
             </p>
             {LINKS.dataset && (
               <p className="text-sm text-zinc-600 mb-8">
-                The full dataset is available on{' '}
+                Dataset files and release documentation are available on{' '}
                 <a
                   href={LINKS.dataset}
                   target="_blank"
@@ -222,9 +271,32 @@ export default function App() {
                 >
                   Hugging Face
                 </a>
-                .
+                . The paper reports benchmark-level counts; see the dataset card for release contents and subset statistics.
               </p>
             )}
+            <div className="overflow-x-auto mb-8">
+              <table className="w-full text-sm text-left border-collapse">
+                <caption className="text-left text-base font-semibold text-zinc-800 mb-3">
+                  Eight evaluation tiers
+                </caption>
+                <thead>
+                  <tr className="border-b border-zinc-300">
+                    <th scope="col" className="py-2 pr-4">Tier</th>
+                    <th scope="col" className="py-2 pr-4">Task</th>
+                    <th scope="col" className="py-2">Challenge</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {TIER_CONFIGS.map((tier) => (
+                    <tr key={tier.id} className="border-b border-zinc-200">
+                      <th scope="row" className="py-2 pr-4 font-medium">{tier.id}. {tier.name}</th>
+                      <td className="py-2 pr-4">{tier.subtitle}</td>
+                      <td className="py-2">{tier.challenge}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
           <div className="flex border-t border-zinc-200">
             <Sidebar
@@ -258,11 +330,35 @@ export default function App() {
           </div>
         </section>
 
+        <section id="citation" className="border-t border-zinc-200 bg-white">
+          <div className="max-w-4xl mx-auto px-6 py-12">
+            <h2 className="text-2xl font-bold text-zinc-900 mb-4">Citation</h2>
+            <p className="text-zinc-700 leading-relaxed">
+              Pahwa, R., Beedu, A., Priye, P., Gandhi, R., Takawale, S., Baijal, A., and Yang, Z.
+              (2026). Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use.
+              Interspeech 2026, 3453–3457.{' '}
+              <a href={`https://doi.org/${DOI}`} className="text-blue-600 underline underline-offset-2">
+                doi: {DOI}
+              </a>.
+            </p>
+            <p className="mt-3 text-sm text-zinc-600">
+              <a href={`${import.meta.env.BASE_URL}citation.bib`} download className="text-blue-600 underline underline-offset-2">
+                Download BibTeX
+              </a>
+              {' · '}
+              <a href={PROCEEDINGS} className="text-blue-600 underline underline-offset-2">Official proceedings record</a>
+              {' · '}
+              <a href="https://arxiv.org/abs/2604.22821" className="text-blue-600 underline underline-offset-2">arXiv preprint</a>
+            </p>
+            <pre className="mt-5 overflow-x-auto rounded-lg border border-zinc-200 bg-zinc-50 p-4 text-xs leading-relaxed"><code>{BIBTEX}</code></pre>
+          </div>
+        </section>
+
         {/* Footer */}
         <footer className="border-t border-zinc-200 py-8 text-center text-sm text-zinc-500">
           <p>Audio2Tool — Benchmark for Speech Tool Use. {CONFERENCE}.</p>
           <p className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1">
-            <NavLink href={LINKS.paper} label="arXiv:2604.22821" />
+            <NavLink href={LINKS.paper} label="Interspeech proceedings" />
             <NavLink href={LINKS.dataset} label="Dataset on Hugging Face" />
             <NavLink href={LINKS.code} label="Code" />
             <NavLink href={LINKS.leaderboard} label="Leaderboard" />

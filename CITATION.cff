@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use Audio2Tool in your research, please cite the paper in preferred-citation."
+type: software
+title: "Audio2Tool project website"
+authors:
+  - name: "Audio2Tool contributors"
+repository-code: "https://github.com/audio2tool/audio2tool.github.io"
+url: "https://audio2tool.github.io/"
+preferred-citation:
+  type: conference-paper
+  title: "Audio2Tool: Speak, Call, Act - A Dataset for Benchmarking Speech Tool Use"
+  authors:
+    - given-names: Ramit
+      family-names: Pahwa
+    - given-names: Apoorva
+      family-names: Beedu
+    - given-names: Parivesh
+      family-names: Priye
+    - given-names: Rutu
+      family-names: Gandhi
+    - given-names: Saloni
+      family-names: Takawale
+    - given-names: Aruna
+      family-names: Baijal
+    - given-names: Zengli
+      family-names: Yang
+  collection-title: "Interspeech 2026"
+  year: 2026
+  start: 3453
+  end: 3457
+  doi: "10.21437/Interspeech.2026-2857"
+  issn: "2958-1796"
+  url: "https://www.isca-archive.org/interspeech_2026/pahwa26_interspeech.html"
