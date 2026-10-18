@@ -172,8 +172,8 @@ export default function App() {
             {AUTHORS.map((author, i) => (
               <span key={author.name}>
                 <span className="whitespace-nowrap">
-                  {author.researchLead && <><sup title="Research lead">★</sup>{' '}</>}
                   {author.name}
+                  {author.researchLead && <>{' '}<sup title="Research lead">★</sup></>}
                   {author.equal && <sup>†</sup>}
                 </span>
                 {i < AUTHORS.length - 1 && ', '}
