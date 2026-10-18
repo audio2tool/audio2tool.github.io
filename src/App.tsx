@@ -13,10 +13,12 @@ interface Author {
   name: string
   /** Marked with a dagger (†) as an equal-contribution author. */
   equal?: boolean
+  /** Marked with a star (★) as the research lead. */
+  researchLead?: boolean
 }
 
 const AUTHORS: Author[] = [
-  { name: 'Ramit Pahwa', equal: true },
+  { name: 'Ramit Pahwa', equal: true, researchLead: true },
   { name: 'Apoorva Beedu', equal: true },
   { name: 'Parivesh Priye' },
   { name: 'Rutu Gandhi' },
@@ -170,6 +172,7 @@ export default function App() {
             {AUTHORS.map((author, i) => (
               <span key={author.name}>
                 <span className="whitespace-nowrap">
+                  {author.researchLead && <><sup title="Research lead">★</sup>{' '}</>}
                   {author.name}
                   {author.equal && <sup>†</sup>}
                 </span>
@@ -178,6 +181,11 @@ export default function App() {
             ))}
           </p>
           <p className="mt-1 text-sm text-zinc-500">{AFFILIATION}</p>
+          {AUTHORS.some((author) => author.researchLead) && (
+            <p className="mt-1 text-xs text-zinc-400">
+              <sup>★</sup> Research lead
+            </p>
+          )}
           {hasEqualContribution && (
             <p className="mt-1 text-xs text-zinc-400">
               <sup>†</sup> Equal contribution
