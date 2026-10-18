@@ -1,10 +1,13 @@
-# Audio2Tool: Speak, Call, Act
+# Audio2Tool: Speak, Call, Act — A Dataset for Benchmarking Speech Tool Use
 
 Project page for the **Audio2Tool** benchmark, showcasing the eight complexity tiers with audio samples, transcripts, and ground-truth tool calls.
 
+Audio2Tool evaluates speech function calling across smart car, smart home, and wearable APIs. The paper was published in **Interspeech 2026, pp. 3453–3457**, DOI **[10.21437/Interspeech.2026-2857](https://doi.org/10.21437/Interspeech.2026-2857)**. Use [public/citation.bib](public/citation.bib) or the preferred paper citation in [CITATION.cff](CITATION.cff).
+
 ## Links
 
-- **Paper:** [arXiv:2604.22821](https://arxiv.org/abs/2604.22821)
+- **Paper:** [Official Interspeech proceedings](https://www.isca-archive.org/interspeech_2026/pahwa26_interspeech.html)
+- **Preprint:** [arXiv:2604.22821](https://arxiv.org/abs/2604.22821)
 - **Dataset:** [RVtech/Audio2Tool on Hugging Face](https://huggingface.co/datasets/RVtech/Audio2Tool)
 - **Code:** [audio2tool/Audio2Tool on GitHub](https://github.com/audio2tool/Audio2Tool)
 - **Leaderboard:** [RVtech/Audio2ToolLeaderboard on Hugging Face Spaces](https://huggingface.co/spaces/RVtech/Audio2ToolLeaderboard)
@@ -20,6 +23,22 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173).
 
+## Search and research discovery
+
+`npm run build` compiles the client and renders the same React page into `dist/index.html`. The title, abstract, resource links, benchmark scope, all eight tier descriptions, and citation are available without JavaScript. The browser hydrates this HTML to enable the audio demo. `npm run dev` remains client-rendered; use `npm run build && npm run preview` to inspect the production HTML.
+
+The homepage includes a canonical URL, Google Scholar citation metadata, and ordinary `ScholarlyArticle` JSON-LD. Keep these synchronized with the official proceedings record. The PDF is linked normally to ISCA; an external `citation_pdf_url` is intentionally omitted because [Scholar's guidelines](https://scholar.google.com/intl/en/scholar/inclusion.html) require that field's PDF to be in the same subdirectory as the abstract page. ISCA and arXiv remain the hosted full-text records.
+
+`public/robots.txt` allows crawlers and declares `public/sitemap.xml`. A missing robots file previously did not block crawling. No new training-specific permission or restriction is introduced. Sitemap submission and metadata help discovery but do not guarantee indexing, ranking, AI retrieval, or citations; no special AI file or schema is required by [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features).
+
+After deployment:
+
+1. Verify the site in Google Search Console and Bing Webmaster Tools, submit `https://audio2tool.github.io/sitemap.xml`, and inspect/request indexing of the homepage. Search Console verification tokens must come from the site owner; this repository contains no invented token.
+2. Update the **code repository** README/CITATION.cff and the **Hugging Face dataset card** to use the same official paper title, DOI, authors, and BibTeX. Link the proceedings, preprint, project, code, and dataset to each other.
+3. Reconcile the paper/site's approximately 30,000-query benchmark with the dataset card's public-release counts. Define unique queries, audio renditions, and rows separately and fix the Hugging Face viewer's size-consistency error before publishing new exact totals.
+4. Link the official publication from each author's publications page. Add factual comparisons and reproducible usage instructions where they help researchers assess relevance.
+5. Track Search Console impressions/clicks for relevant non-branded queries such as “speech function calling benchmark” and “audio-native tool use”. Periodically test neutral literature-search prompts in research assistants, recording whether the paper is retrieved, linked, and summarized correctly. Treat these as observations; assistant results vary.
+
 ## Hosting on GitHub Pages
 
 1. **Create a new repository** (e.g. `audio2tool-demo`) on GitHub.
@@ -30,20 +49,13 @@ Open [http://localhost:5173](http://localhost:5173).
    Place your `.wav` files in `public/audio/tier1/` … `public/audio/tier8/` and update each tier's `metadata.json` to match your samples (see structure below).
 
 4. **Build for GitHub Pages**  
-   Use your repo name as the base path:
-
-   ```bash
-   npm install
-   npm run build -- --base /YOUR-REPO-NAME/
-   ```
-
-   Or set the base in `vite.config.ts`:
+   This site uses `/` at `audio2tool.github.io`. If adapting it to a project subdirectory, set the base in `vite.config.ts` so both the client and prerender builds share it:
 
    ```ts
    base: '/your-repo-name/',
    ```
 
-   Then run `npm run build`.
+   Then run `npm install` and `npm run build`. Also update canonical URLs, the sitemap, and research metadata for the new site.
 
 5. **Deploy**  
    - Enable GitHub Pages in the repo (Settings → Pages).  
